@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SfGxcgcJpefeqHLFa0HH43Tvq3h1Xe4F6AK9PN2XHZXDTf3Ax/WihaQbBFlJ7vN1opfmAOrOGrHofi+sA0Btxg==",
+  "dgSpecHash": "OFAzn+e5ALbzjRvkVJPsgYfxCPcE/mitZSkObR/V7hHpcrOEfRV9EIpQVYEdY6DjEZ/clA83kPm51/HI3dQTdQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson5\\Homework5\\Homework5.csproj",
+  "projectFilePath": "C:\\projects\\exercises\\Culculate Primes Sum with Recursion\\Homework5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bonis\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
     "C:\\Users\\bonis\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
