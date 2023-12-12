@@ -14,3 +14,19 @@ C:\Users\bonis\Desktop\DmytroBonislavskiy_dev\Lesson5\Homework5\obj\Debug\net5.0
 C:\Users\bonis\Desktop\DmytroBonislavskiy_dev\Lesson5\Homework5\obj\Debug\net5.0\Homework5.pdb
 C:\Users\bonis\Desktop\DmytroBonislavskiy_dev\Lesson5\Homework5\obj\Debug\net5.0\Homework5.genruntimeconfig.cache
 C:\Users\bonis\Desktop\DmytroBonislavskiy_dev\Lesson5\Homework5\obj\Debug\net5.0\ref\Homework5.dll
+C:\projects\exercises\Culculate Primes Sum with Recursion\bin\Debug\net5.0\Homework5.exe
+C:\projects\exercises\Culculate Primes Sum with Recursion\bin\Debug\net5.0\Homework5.deps.json
+C:\projects\exercises\Culculate Primes Sum with Recursion\bin\Debug\net5.0\Homework5.runtimeconfig.json
+C:\projects\exercises\Culculate Primes Sum with Recursion\bin\Debug\net5.0\Homework5.runtimeconfig.dev.json
+C:\projects\exercises\Culculate Primes Sum with Recursion\bin\Debug\net5.0\Homework5.dll
+C:\projects\exercises\Culculate Primes Sum with Recursion\bin\Debug\net5.0\Homework5.pdb
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.csproj.AssemblyReference.cache
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.AssemblyInfoInputs.cache
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.AssemblyInfo.cs
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.csproj.CoreCompileInputs.cache
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.dll
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\refint\Homework5.dll
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.pdb
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\Homework5.genruntimeconfig.cache
+C:\projects\exercises\Culculate Primes Sum with Recursion\obj\Debug\net5.0\ref\Homework5.dll

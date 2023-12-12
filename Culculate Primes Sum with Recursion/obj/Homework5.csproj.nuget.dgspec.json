@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson5\\Homework5\\Homework5.csproj": {}
+    "C:\\projects\\exercises\\Culculate Primes Sum with Recursion\\Homework5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson5\\Homework5\\Homework5.csproj": {
+    "C:\\projects\\exercises\\Culculate Primes Sum with Recursion\\Homework5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson5\\Homework5\\Homework5.csproj",
+        "projectUniqueName": "C:\\projects\\exercises\\Culculate Primes Sum with Recursion\\Homework5.csproj",
         "projectName": "Homework5",
-        "projectPath": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson5\\Homework5\\Homework5.csproj",
+        "projectPath": "C:\\projects\\exercises\\Culculate Primes Sum with Recursion\\Homework5.csproj",
         "packagesPath": "C:\\Users\\bonis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson5\\Homework5\\obj\\",
+        "outputPath": "C:\\projects\\exercises\\Culculate Primes Sum with Recursion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
