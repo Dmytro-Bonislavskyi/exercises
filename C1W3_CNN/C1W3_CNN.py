@@ -4,10 +4,32 @@ import os
 import numpy as np
 import tensorflow as tf
 from tensorflow import keras
+import matplotlib.pyplot as plt
 
 # Load the Fashion MNIST dataset
-fmnist = tf.keras.datasets.fashion_mnist
-(training_images, training_labels), (test_images, test_labels) = fmnist.load_data()
+#fmnist = tf.keras.datasets.fashion_mnist
+#(training_images, training_labels), (test_images, test_labels) = fmnist.load_data()
+
+current_dir = os.getcwd()
+print(current_dir)
+
+# Append data/mnist.npz to the previous path to get the full path
+data_path = os.path.join(current_dir, "data/mnist_v2.npz")
+(training_images, training_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data(path=data_path)
+
+
+## You can put between 0 to 59999 here
+index = 1
+
+## Set number of characters per row when printing
+np.set_printoptions(linewidth=320)
+
+## Print the label and image
+print(f'LABEL: {training_labels[index]}')
+print(f'\nIMAGE PIXEL ARRAY:\n {training_images[index]}')
+
+## Visualize the image
+plt.imshow(training_images[index])
 
 def reshape_and_normalize(images):
     # Reshape the images to add an extra dimension
@@ -83,7 +105,7 @@ assert model_params < 1000000, (
 callbacks = myCallback()
 
 # Train your model (this can take up to 5 minutes)
-history = model.fit(training_images, training_labels, epochs=10, callbacks=[callbacks])
+history = model.fit(training_images, training_labels, epochs=5, callbacks=[callbacks])
 print(f"Your model was trained for {len(history.epoch)} epochs")
 if not "accuracy" in history.model.metrics_names:
     print("Use 'accuracy' as metric when compiling your model.")
@@ -106,7 +128,7 @@ f, axarr = plt.subplots(3,4)
 FIRST_IMAGE=0
 SECOND_IMAGE=23
 THIRD_IMAGE=28
-CONVOLUTION_NUMBER = 1 #( Change for check other filters)
+CONVOLUTION_NUMBER = 18 #( Change for check other filters)
 
 layer_outputs = [layer.output for layer in model.layers]
 activation_model = tf.keras.models.Model(inputs = model.input, outputs = layer_outputs)
@@ -118,11 +140,15 @@ for x in range(0,4):
   f1 = activation_model.predict(test_images[FIRST_IMAGE].reshape(1, 28, 28, 1))[x]
   axarr[0,x].imshow(f1[0, : , :, CONVOLUTION_NUMBER], cmap='inferno')
   axarr[0,x].grid(False)
+
   
   f2 = activation_model.predict(test_images[SECOND_IMAGE].reshape(1, 28, 28, 1))[x]
   axarr[1,x].imshow(f2[0, : , :, CONVOLUTION_NUMBER], cmap='inferno')
   axarr[1,x].grid(False)
+
   
   f3 = activation_model.predict(test_images[THIRD_IMAGE].reshape(1, 28, 28, 1))[x]
   axarr[2,x].imshow(f3[0, : , :, CONVOLUTION_NUMBER], cmap='inferno')
   axarr[2,x].grid(False)
+
+plt.show()

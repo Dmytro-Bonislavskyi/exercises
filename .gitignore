@@ -12,3 +12,8 @@
 *.png
 *.bmp
 *.gif
+
+# Ignore archive files
+*.zip
+*.rar
+*.npz
