@@ -1,0 +1,14 @@
+# Ignore files and directories matching these patterns
+*.log
+/build/
+/tmp/
+
+# Ignore backup files
+*.bak
+
+# Ignore image files
+*.jpg
+*.gif
+*.png
+*.bmp
+*.gif
