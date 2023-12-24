@@ -253,3 +253,41 @@ for layer_name, feature_map in zip(layer_names, successive_feature_maps):
 plt.show()
  #   from google.colab import runtime
 #runtime.unassign()
+
+
+
+
+  #### START CODE HERE
+
+  ## HINT:
+  ## Use os.makedirs to create your directories with intermediate subdirectories
+  ## Don't hardcode the paths. Use os.path.join to append the new directories to the root_path parameter
+  ##os.makedirs(root_path)
+  #os.makedirs(os.path.join(root_path, 'training/cats/'))
+  #os.makedirs(os.path.join(root_path, 'training/dogs/'))
+  #os.makedirs(os.path.join(root_path, 'validation/cats'))
+  #os.makedirs(os.path.join(root_path, 'validation/dogs'))
+
+  #pass
+
+
+  #### END CODE HERE
+  #### START CODE HERE
+
+  #list_files = os.listdir(SOURCE_DIR)
+  #random.shuffle(list_files) 
+  #val_files_n = len(list_files)-(len(list_files)*SPLIT_SIZE)
+  #i=0
+
+  #for file in list_files:
+  #  if os.path.getsize(os.path.join(SOURCE_DIR, file)) == 0.0:
+  #    print(file + " is zero length, so ignoring.")
+  #  elif i < val_files_n:
+  #    copyfile(os.path.join(SOURCE_DIR, file), os.path.join(VALIDATION_DIR, file))
+  #  else:
+  #    copyfile(os.path.join(SOURCE_DIR, file), os.path.join(TRAINING_DIR, file))
+  #  i+=1
+  
+  #pass
+
+  #### END CODE HERE
