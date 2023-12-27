@@ -123,3 +123,14 @@ plot_loss_acc(history)
 
 # Plot the results of training with data augmentation
 plot_loss_acc(history_with_aug)
+
+#def download_history():
+#  import pickle
+#  from google.colab import files
+
+#  with open('history_augmented.pkl', 'wb') as f:
+#    pickle.dump(history.history, f)
+
+#  files.download('history_augmented.pkl')
+
+#download_history()
