@@ -14,7 +14,7 @@ current_dir = os.getcwd()
 print(current_dir)
 
 # Append data/mnist.npz to the previous path to get the full path
-data_path = os.path.join(current_dir, "data/mnist_v2.npz")
+data_path = os.path.join(current_dir, "data\mnist_v2.npz")
 (training_images, training_labels), (test_images, test_labels) = tf.keras.datasets.mnist.load_data(path=data_path)
 
 
