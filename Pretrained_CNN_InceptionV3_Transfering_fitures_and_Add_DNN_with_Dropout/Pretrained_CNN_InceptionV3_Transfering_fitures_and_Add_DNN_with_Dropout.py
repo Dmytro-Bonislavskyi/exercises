@@ -5,7 +5,7 @@ import tensorflow as tf
 class myCallback(tf.keras.callbacks.Callback):
   def on_epoch_end(self, epoch, logs={}):
     if(logs.get('accuracy')>0.93):
-      print("\nReached 99.9% accuracy so cancelling training!")
+      print("\nReached 93.0% accuracy so cancelling training!")
       self.model.stop_training = True
 
 from tensorflow.keras.applications.inception_v3 import InceptionV3
