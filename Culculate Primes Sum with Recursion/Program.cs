@@ -31,15 +31,18 @@ namespace Homework5
                 int left, right;
                 left = arr.Take(i).Aggregate(0, (a, b) => a + b);
                 right = arr.Skip(i + 1).Aggregate(0, (a, b) => a + b);
-                Console.WriteLine("Left side = " + left +" right side = " + right);
-               // if (arr.Take(i).Aggregate(0, (a, b) => a + b) == arr.Skip(i+1).Aggregate(0,(a,b) => a+b))
-                 //   return i;
+                Console.WriteLine("Left side = " + left + " right side = " + right);
+                // if (arr.Take(i).Aggregate(0, (a, b) => a + b) == arr.Skip(i+1).Aggregate(0,(a,b) => a+b))
+                //   return i;
 
-               // arr.Take(i).Aggregate(0, (a, b) => a + b) == arr.Skip(i + 1).Aggregate(0, (a, b) => a + b) ? return i :
-           
+                // arr.Take(i).Aggregate(0, (a, b) => a + b) == arr.Skip(i + 1).Aggregate(0, (a, b) => a + b) ? return i :
+
             }
             return -1;
         }
+
+
+
 
         //public static int MaxSequence(int[] arr)
         //{
@@ -67,9 +70,33 @@ namespace Homework5
             {
                 sum += item;
                 max = sum > max ? max : sum;
+
                 res = res > sum - max ? res : sum - max;
+
+                if (sum > max) max = max;
+                else max = sum;
+
+                if (res > sum - max) res = res;
+                else res = sum - max;
+
             }
             return res;
+        }
+
+
+        public static int MaxSequence(int[] arr)
+        {
+            int max = 0, current = 0;
+            foreach (int item in arr)
+            {
+                current += item;
+                if (item > current) current = item;
+                if (current > max) max = current;
+
+            }
+
+            return max;
+
         }
 
         //public static IEnumerable<T> UniqueInOrder<T>(IEnumerable<T> iterable)
@@ -113,19 +140,18 @@ namespace Homework5
 
 
 
-
         static void Main(string[] args)
         {
             //UniqueInOrder(new List<int> { 1, 2, 2 });
-            
+            Console.WriteLine("Max Sequence: " + MaxSequence(new[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
 
             //string h = new List<int> { 1, 3, 5 }.ToString();
 
             Console.WriteLine(UniqueInOrder(new String("fdussjjgd").ToString()));
             Console.WriteLine(UniqueInOrder(new List<int> { 1,2,2,3,3}));
-            Console.WriteLine(UniqueInOrder(new List<string> { "abc", null, null, "bcc" }));
+            //Console.WriteLine(UniqueInOrder(new List<string> { "abc", null, null, "bcc" }));
 
-            Console.WriteLine("Max Sequence: " + MaxSequence(new[] { -2, 1, -3, 4, -1, 2, 1, -5, 4, 8 }));
+
 
             Console.WriteLine("It Is:" + FindEvenIndex(new [] { 1, 100, 50, -51, 1, 1 }));
 

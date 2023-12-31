@@ -18,6 +18,7 @@ print(current_dir)
 
 # Set the weights file you downloaded into a variable
 data_path = os.path.join(current_dir, "tmp\inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5")
+#data_path = os.path.join(current_dir, "tmp\inception_v3_weights_tf_dim_ordering_tf_kernels.h5")
 #local_weights_file = '/tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'
 current_dir = os.getcwd()
 print(data_path)
@@ -28,6 +29,7 @@ print(data_path)
 pre_trained_model = InceptionV3(input_shape = (150, 150, 3),
                                 include_top = False,
                                 weights = None)
+#pre_trained_model = InceptionV3(include_top=True, weights='imagenet')
 
 # Load the pre-trained weights you downloaded.
 pre_trained_model.load_weights(data_path)
