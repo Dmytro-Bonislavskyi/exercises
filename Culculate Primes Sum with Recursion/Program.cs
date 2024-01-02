@@ -63,25 +63,25 @@ namespace Homework5
         //    return maxSum <= 0 ? 0 : maxSum;
         //}
 
-        public static int MaxSequence(int[] arr)
-        {
-            int max = 0, res = 0, sum = 0;
-            foreach (var item in arr)
-            {
-                sum += item;
-                max = sum > max ? max : sum;
+        //public static int MaxSequence(int[] arr)
+        //{
+        //    int max = 0, res = 0, sum = 0;
+        //    foreach (var item in arr)
+        //    {
+        //        sum += item;
+        //        max = sum > max ? max : sum;
 
-                res = res > sum - max ? res : sum - max;
+        //        res = res > sum - max ? res : sum - max;
 
-                if (sum > max) max = max;
-                else max = sum;
+        //        if (sum > max) max = max;
+        //        else max = sum;
 
-                if (res > sum - max) res = res;
-                else res = sum - max;
+        //        if (res > sum - max) res = res;
+        //        else res = sum - max;
 
-            }
-            return res;
-        }
+        //    }
+        //    return res;
+        //}
 
 
         public static int MaxSequence(int[] arr)
@@ -138,10 +138,22 @@ namespace Homework5
             return sequence;
         }
 
-
+        public static string[] inArray(string[] array1, string[] array2)
+        {
+            List<string> sortedArr = new List<string>();
+            foreach (string word in array1)
+                if (array2.Any(w => w.Contains(word)) == true) 
+                    sortedArr.Add(word);
+            return sortedArr.OrderBy(x => x).ToArray();
+        }
 
         static void Main(string[] args)
         {
+
+            string[] a1 = new string[] { "arp", "live", "strong" };
+            string[] a2 = new string[] { "lively", "alive", "harp", "sharp", "armstrong" };
+            Console.WriteLine(string.Concat(inArray(a1,a2)));
+
             //UniqueInOrder(new List<int> { 1, 2, 2 });
             Console.WriteLine("Max Sequence: " + MaxSequence(new[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
 
