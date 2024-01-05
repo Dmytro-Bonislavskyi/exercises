@@ -2,8 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Channels;
+using System.Xml.Schema;
 
 
 //HOMEWORK
@@ -16,6 +21,7 @@ namespace Homework5
 {
     class Program
     {
+        public static int prevFix = 0;
         public static int Persistence(int n) => n < 10 ? 0 : 1 + Persistence($"{n}".Aggregate(1, (a, b) => a * (b - 48)));
         public static int Persistence(long n)
         {
@@ -147,30 +153,273 @@ namespace Homework5
             return sortedArr.OrderBy(x => x).ToArray();
         }
 
-        static void Main(string[] args)
+
+        public static string PigIt(string str)
         {
+            string newStr = "";
+            Regex reg = new Regex("[a-zA-Z]");
+            string[] words = str.Split(" ");
+            foreach (string word in words)
+                if (reg.IsMatch(word))
+                    newStr += string.Concat(word.TakeLast(word.Length - 1).Concat(new char[] { word[0], 'a', 'y', ' ' }));
+                else newStr += word + " ";// string.Concat(word, " ")
+            return newStr.Remove(newStr.Length-1);
+        }
+
+
+
+
+        
+
+         public static string MiddlePermutation(string s)
+         {
+            List<string> combinations = new List<string>();
+            char[] arr = s.ToArray();
+            combine(new List<char>{}, s.ToList(), combinations);
+
+            var t = combinations.OrderBy(o => o);
+            var d = t.ElementAt((combinations.Count / 2) - 1);
+
+            return d;
+         }
+
+        public static void combine(List<char> fix, List<char> flex, List<string> combinations)
+        {
+
+            for (int i = 0; i < flex.Count; i++)
+            {
+                combine(fix.Append(flex.ElementAt(0)).ToList(), flex.Skip(1).ToList(), combinations);
+                var temp = flex[0];
+                flex.RemoveAt(0);
+                flex.Add(temp);
+            }
+            if (flex.Count == 0)
+            {
+                combinations.Add(string.Concat(string.Concat(fix), string.Concat(flex)));
+                Console.WriteLine(string.Concat(fix) + " " + string.Concat(flex));
+            }
+        }
+
+        public static string MiddlePermutation3(string s)
+        {
+            char[] arr = s.ToCharArray();
+            Array.Sort(arr);
+            //0123
+            //abcd
+
+            //bdca
+            int length = arr.Length;
+            int middleIndex = length % 2 == 0 ? (length / 2) - 1 : length / 2;
+
+            var result = new StringBuilder();
+
+            for (int i = 0; i < length; i++)
+            {
+                result.Append(arr[middleIndex]);
+                if (i % 2 == 0)
+                {
+                    middleIndex += i;
+                }
+                else
+                {
+                    middleIndex -= i;
+                }
+            }
+
+            return result.ToString();
+        }
+
+        public static string MiddlePermutation5(string s)
+        {
+            List<string> combinations = new List<string>();
+            combine("", s, combinations);
+
+            combinations.Sort();
+
+            return combinations[(combinations.Count / 2) - 1];
+        }
+
+        public static void combine(string fixedPart, string flexiblePart, List<string> combinations)
+        {
+           // Console.ForegroundColor = ConsoleColor.Gray;
+           // Console.WriteLine(fixedPart + " " + flexiblePart);
+           
+            int length = flexiblePart.Length;
+
+            if (length == 0)
+            {
+                combinations.Add(fixedPart);
+                Console.ForegroundColor = ConsoleColor.Green;
+                //Console.WriteLine(fixedPart);
+                Console.WriteLine(prevFix - Convert.ToInt32(fixedPart));
+                prevFix = Convert.ToInt32(fixedPart);
+                return;
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                combine(
+                    fixedPart + flexiblePart[i],
+                    flexiblePart.Substring(0, i) + flexiblePart.Substring(i + 1),
+                    combinations
+                );
+            }
+        }
+
+        public static BigInteger Factorial(int n)
+        {
+            BigInteger result = 1;
+            for (int i = 2; i <= n; i++) result *= i;
+            return result;
+        }
+
+        //public static string MiddlePermutation6(string s)
+        //{//cbxda
+        //    var sorted = s.OrderBy(x => x).ToArray();
+        //    int n = s.Length;
+
+        //    char[] mp = new char[s.Length];
+        //    int midIndex = (n % 2 == 0) ? (n / 2 - 1) : (n / 2);
+
+        //    for (int i = 0; i < mp.Length; i++)
+        //    {
+        //        int index = midIndex / Factorial(s.Length - 1 - i);
+        //        midIndex = midIndex % Factorial(s.Length - 1 - i);
+
+        //        mp[i] = sorted[midIndex];
+        //        sorted = sorted.Where((c, j) => j != midIndex).ToArray();
+        //    }
+
+        //    return new string(mp);
+        //}
+
+        public static string MiddlePermutation2(string s)
+        {
+            var sorted = s.OrderBy(x => x).ToList();
+            int n = 0;
+
+            char[] mp = s.ToArray();
+            for (int i = 0; i < sorted.Count(); i++) n = n * 10 + sorted.Count() + 1;
+            
+            //var aMid = (n / 2).ToString();
+            //var bMid = (n / 2 - 1).ToString()
+            var aMid = (n % 2 == 0) ? (n / 2 - 1).ToString() : (n / 2).ToString();
+            
+
+            for (int i = 0; i < mp.Count(); i++)
+            {
+                int min = 100, pos = -1;
+                for (int j = 0; j < sorted.Count; j++)
+                {
+                    var b = Convert.ToInt32(aMid[i] - '0' - 1);
+                    var st = Convert.ToInt32(sorted[j] - '0' - 1);
+                    if (Math.Abs(b - st) < min)
+                    {
+                        min = Math.Abs(b - st);
+                        pos = j;
+                    }
+                }
+                mp[i] = sorted[pos];
+                sorted.RemoveAt(pos);
+                //Console.WriteLine(mp[i]);
+            }
+
+            return string.Concat(mp);
+        }
+
+        public static string MiddlePermutation7(string s)
+        {
+            // Sort the characters in alphabetical order
+            char[] sortedChars = s.ToCharArray();
+            Array.Sort(sortedChars);
+            string sortedString = new string(sortedChars);
+
+            // Calculate the index of the middle permutation
+            int length = sortedString.Length;
+            BigInteger middleIndex = (length % 2 == 0) ?
+                Factorial(length / 2) :
+                Factorial((length - 1) / 2) * (length / 2);
+
+            // Generate the middle permutation
+            string result = "";
+            char[] remainingChars = sortedString.ToCharArray();
+            for (int i = 0; i < length; i++)
+            {
+                BigInteger index = BigInteger.DivRem(middleIndex, remainingChars.Length, out middleIndex);
+                result += remainingChars[(int)index];
+                remainingChars = remainingChars.Where((c, j) => j != (int)index).ToArray();
+            }
+
+            return result;
+        }
+
+        static string MiddlePermutation9(string str)
+        {
+            int position = 0;
+            string result = "";
+            List<char> temp = str.OrderBy(c => c).ToList();
+            BigInteger rest = Factorial(temp.Count) / 2;
+            BigInteger total = rest;
+            BigInteger current = 0;
+            BigInteger variants;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                variants = Factorial(temp.Count - 1);
+                position = (int)Math.Ceiling((decimal)rest / (decimal)variants) - 1;// if try (decimal)(rest / variants) position calculating wrong
+                
+                result += temp[position];
+                temp.Remove(temp[position]);
+                current = current + position * variants;
+                rest = total - current;
+            }
+            return result;
+        }
+
+
+            static void Main(string[] args)
+        {   //3 - 9
+            //4 -346,5
+            //5 - 792
+            //6 - 23462.5
+            //7 - 67923
+            //MiddlePermutation2("abcd").ToList().ForEach(z => Console.WriteLine(z));
+            //abcdxgz
+            //Console.WriteLine(MiddlePermutation2("12345"));
+            Console.WriteLine("\n" + MiddlePermutation9("nmzyxwvutsrqpolkjigfedcba"));
+            string pigLatin = "Hello world !";
+            Console.WriteLine(PigIt(pigLatin));
+
 
             string[] a1 = new string[] { "arp", "live", "strong" };
             string[] a2 = new string[] { "lively", "alive", "harp", "sharp", "armstrong" };
+            int[] a3 = new int[] { 0, 1, 2, 0, 3, };
             Console.WriteLine(string.Concat(inArray(a1,a2)));
-
+            
             //UniqueInOrder(new List<int> { 1, 2, 2 });
             Console.WriteLine("Max Sequence: " + MaxSequence(new[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 }));
 
-            //string h = new List<int> { 1, 3, 5 }.ToString();
+            var h = new List<int> { 1, 0,6,0, 3, 5 };
+            a3.ToList();
 
-            Console.WriteLine(UniqueInOrder(new String("fdussjjgd").ToString()));
-            Console.WriteLine(UniqueInOrder(new List<int> { 1,2,2,3,3}));
-            //Console.WriteLine(UniqueInOrder(new List<string> { "abc", null, null, "bcc" }));
+            a3.OrderBy(x => x == 0).ToArray();
+
+            var t = a3.ToList().RemoveAll(x => x == 0);
+            for(int i = 0; i < t; i++) h.Add(0);
+            a3.ToList().ForEach(e => Console.WriteLine(e));
+
+            //Console.WriteLine(UniqueInOrder(new String("fdussjjgd").ToString()));
+            //Console.WriteLine(UniqueInOrder(new List<int> { 1,2,2,3,3}));
+            ////Console.WriteLine(UniqueInOrder(new List<string> { "abc", null, null, "bcc" }));
 
 
 
-            Console.WriteLine("It Is:" + FindEvenIndex(new [] { 1, 100, 50, -51, 1, 1 }));
+            //Console.WriteLine("It Is:" + FindEvenIndex(new [] { 1, 100, 50, -51, 1, 1 }));
 
-            Console.WriteLine(Persistence(0l));
-            Console.WriteLine(Persistence(5l));
-            Console.WriteLine(Persistence(25));
-            Console.WriteLine(Persistence(999));
+            //Console.WriteLine(Persistence(0l));
+            //Console.WriteLine(Persistence(5l));
+            //Console.WriteLine(Persistence(25));
+            //Console.WriteLine(Persistence(999));
 
 
 
@@ -185,8 +434,6 @@ namespace Homework5
             
             Regex reg = new Regex("[^a-m]");
             Console.WriteLine(input.Count() +"  "+reg.Matches(input).Count());
-
-
 
             $"{n}".Aggregate(1,(a,b)=>a*b);
 

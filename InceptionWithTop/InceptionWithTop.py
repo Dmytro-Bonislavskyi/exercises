@@ -14,13 +14,13 @@ import os
 
 
 current_dir = os.getcwd()
-print(current_dir)
+#print(current_dir)
 
 # Set the weights file you downloaded into a variable
 #data_path = os.path.join(current_dir, "tmp\inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5")
 data_path = os.path.join(current_dir, "tmp\inception_v3_weights_tf_dim_ordering_tf_kernels.h5")
 #local_weights_file = '/tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'
-current_dir = os.getcwd()
+#current_dir = os.getcwd()
 print(data_path)
 
 
@@ -30,6 +30,43 @@ print(data_path)
 #                                include_top = False,
 #                                weights = None)
 pre_trained_model = InceptionV3(include_top=True, weights='imagenet')
+
+def preprocess_input(x):
+    x /= 255.
+    x -= 0.5
+    x *= 2.
+    return x
+
+
+## Choose an image for visualization
+#img_path = 'Ava.jpg'  # Replace with the path to an image
+#img = image.load_img(img_path, target_size=(150, 150))
+#img_array = image.img_to_array(img)
+#img_array = np.expand_dims(img_array, axis=0)
+
+## Get the activations of the 'mixed7' layer for the chosen image
+#activations = activation_model.predict(img_array)
+
+from keras.preprocessing import image
+import numpy as np
+from keras.models import Model
+from keras.applications.imagenet_utils import decode_predictions
+
+img_path = 'Ava.jpg'
+img = image.load_img(img_path, target_size=(299, 299))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+
+x = preprocess_input(x)
+
+preds = pre_trained_model.predict(x)
+print('==============================')
+print('Predicted:', decode_predictions(preds))
+
+
+
+
+
 
 # Load the pre-trained weights you downloaded.
 pre_trained_model.load_weights(data_path)

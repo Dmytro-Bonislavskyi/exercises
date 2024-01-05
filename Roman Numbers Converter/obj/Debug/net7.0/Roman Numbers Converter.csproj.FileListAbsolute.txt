@@ -1,0 +1,15 @@
+C:\projects\exercises\Roman Numbers Converter\bin\Debug\net7.0\Roman Numbers Converter.exe
+C:\projects\exercises\Roman Numbers Converter\bin\Debug\net7.0\Roman Numbers Converter.deps.json
+C:\projects\exercises\Roman Numbers Converter\bin\Debug\net7.0\Roman Numbers Converter.runtimeconfig.json
+C:\projects\exercises\Roman Numbers Converter\bin\Debug\net7.0\Roman Numbers Converter.dll
+C:\projects\exercises\Roman Numbers Converter\bin\Debug\net7.0\Roman Numbers Converter.pdb
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.csproj.AssemblyReference.cache
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.AssemblyInfoInputs.cache
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.AssemblyInfo.cs
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.csproj.CoreCompileInputs.cache
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.dll
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\refint\Roman Numbers Converter.dll
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.pdb
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\Roman Numbers Converter.genruntimeconfig.cache
+C:\projects\exercises\Roman Numbers Converter\obj\Debug\net7.0\ref\Roman Numbers Converter.dll
