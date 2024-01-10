@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TestBlazorWebAssembly-empty.props" />
+</Project>

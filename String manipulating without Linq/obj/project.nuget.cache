@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pDxmVMp64FUI4JzkkqZelW8BQqu9dYA24BJELVGIiu3vHNjK9+hGjhH3r0dqWRgbPZ+B9eU5vjEncp8mbYqsew==",
+  "dgSpecHash": "SXE+uS0Q5I/mqzkQVUUNTCPxeRrFdRwDwvp8EZ+AcUPWX8fX5ZebnBiSylmGbnNAWVYDhB8n7iRTIRWuWL/7ZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson7\\Homework7\\Homework7.csproj",
+  "projectFilePath": "C:\\projects\\exercises\\String manipulating without Linq\\Homework7.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

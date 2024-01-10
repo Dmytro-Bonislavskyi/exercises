@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson7\\Homework7\\Homework7.csproj": {}
+    "C:\\projects\\exercises\\String manipulating without Linq\\Homework7.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson7\\Homework7\\Homework7.csproj": {
+    "C:\\projects\\exercises\\String manipulating without Linq\\Homework7.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson7\\Homework7\\Homework7.csproj",
+        "projectUniqueName": "C:\\projects\\exercises\\String manipulating without Linq\\Homework7.csproj",
         "projectName": "Homework7",
-        "projectPath": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson7\\Homework7\\Homework7.csproj",
+        "projectPath": "C:\\projects\\exercises\\String manipulating without Linq\\Homework7.csproj",
         "packagesPath": "C:\\Users\\bonis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bonis\\Desktop\\DmytroBonislavskiy_dev\\Lesson7\\Homework7\\obj\\",
+        "outputPath": "C:\\projects\\exercises\\String manipulating without Linq\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
