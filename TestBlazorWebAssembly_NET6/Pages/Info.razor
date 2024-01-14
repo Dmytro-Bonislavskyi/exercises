@@ -1,0 +1,18 @@
+﻿@page "/info"
+<div>
+    <h1>This is a @FieldName</h1>
+    <input @bind-value = "FieldName"/>
+    <h3>Info @Name</h3>
+    <button class="btn btn-primary" @onclick = "@( o => changeName("Dmytro Bonislavskyi"))">Change Name</button>
+</div>
+
+@code {
+    public string Name { get; set; } = "Dmytro";
+
+    public string? FieldName { get; set; }
+
+    public void changeName(string name)
+    {
+        Name = name;
+    }
+}

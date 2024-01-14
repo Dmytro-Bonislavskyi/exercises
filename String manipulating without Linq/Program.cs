@@ -17,6 +17,7 @@ namespace Homework
             Console.WriteLine();
             string text = " Krokodyl 144 .~~";
             var analyzeRes = Analyze(text);
+
             Console.WriteLine("Letters " + (analyzeRes).Item1 + "\nDigits " + (analyzeRes).Item2 + "\nOther " + (analyzeRes).Item3);
             Console.WriteLine("Sorted output: " + Sort("frtAb!!cc__b azy3xwvu  улш коацй tsrqpon74587:'mlkjihgfedcba")); //zyxwvutsrqponmlkjihgfedcba
             Console.WriteLine(Duplicate("frtAb!!cc__b azy3xwvu  улш коацй tsrqpon74587:'mlkjihgfedcba"));
